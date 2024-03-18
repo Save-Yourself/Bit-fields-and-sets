@@ -57,13 +57,14 @@ int main()
 	s1.add(elem_add);
 	cout << s1 << "\n";
 
-	if (0 <= elem_del <= n1)	cout << "Удаленный элемент " << elem_del << "\n";
-	else cout << "Элемент " << elem_del << " выходит за рамки множества\n";
+	if ((0 <= elem_del <= n1) && s1.belong(elem_del == true)) cout << "Удаленный элемент " << elem_del << "\n";
+	if (elem_del > n1 || elem_del < 0 )cout << "Элемент который необходимо удалить " << elem_del << " выходит за рамки множества\n";
+	if (s1.belong(elem_del) == false) cout << "Удаляемого элемента нет внутри множества\n";
 
 	if (0 <= elem_add <= n1)cout << "Добавленный элемент " << elem_add << "\n";
-	else cout << "Элемент " << elem_add << " выходит за рамки множества\n";
+	else cout << "Элемент который необходимо добавить" << elem_add << " выходит за рамки множества\n";
 
-	if (s1.belong(elem_find) == true) cout << "Удаленный элемент " << elem_find << " найден \n";
+	if (s1.belong(elem_find) == true) cout << "Элемент " << elem_find << " найден \n";
 	else cout << "Элемент " << elem_find << " не найден \n";
 	cout << "\n";
 	cout << "\n";
