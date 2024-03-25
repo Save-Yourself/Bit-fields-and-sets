@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "Set.h"
+#include <string>
 #include <algorithm>
 //#define max(a,b) (((a > b) ? (a) : (b));
 
@@ -72,7 +73,7 @@ bool Set::belong(const int el)
 	return resalt;
 }
 
-istream& operator >>(istream& is, Set& op2)
+/*istream& operator >>(istream& is, Set& op2)
 {
 	int numb = 0;
 
@@ -80,6 +81,20 @@ istream& operator >>(istream& is, Set& op2)
 	{
 		is >> numb;
 		if ((numb >= 0) && (numb < op2.set_size))
+			op2.add(numb); else break;
+	}
+	return is;
+}*/
+
+istream& operator >>(istream& is, Set& op2)
+{
+	int numb = 0;
+	char ch = 0;
+	for (int i = 0; i < op2.set_size; i++)
+	{
+		is >> numb;
+		ch=cin.get();
+		if ((numb >= 0) && (numb < op2.set_size) && ch !=10)
 			op2.add(numb); else break;
 	}
 	return is;
